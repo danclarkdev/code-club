@@ -1,0 +1,13 @@
+@import "../node_modules/bulma/bulma.sass";
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.color-change {
+  transition: background-color 800ms;
+}
+
+.tile {
+  border-radius: 10px;
+}
