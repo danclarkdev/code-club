@@ -17,6 +17,6 @@ export default function ColorChanger() {
         <HeroBody>
             <p className="title has-text-light is-size-1 has-text-centered">Woah</p>
         </HeroBody>
-        <SubscriptionButton callback={handleColorChange} />
+        <SubscriptionButton name={ColorChanger.name} callback={handleColorChange} />
     </Tile>
 }

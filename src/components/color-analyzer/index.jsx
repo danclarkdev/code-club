@@ -49,7 +49,9 @@ export default function ColorAnalyzer() {
 
     const { color: init } = useColor();
 
-    const [color, setColor] = useState(init)
+    const [color, setColor] = useState(init);
+
+    const handleColorChange = color => setColor(color)
 
     return <Tile level="child" className="hero has-background-danger">
         <HeroBody>
@@ -59,6 +61,6 @@ export default function ColorAnalyzer() {
                 }
             </p>
         </HeroBody>
-        <SubscriptionButton callback={color => setColor(color)} />
+        <SubscriptionButton name={ColorAnalyzer.name} callback={handleColorChange} />
     </Tile>;
 }

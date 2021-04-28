@@ -16,7 +16,7 @@ const reducer = (callbacks, { callback, hash }) => {
     };
 }
 
-const hashFromFunction = func => {
+const hashFromFunction = (func, name) => {
     const string = JSON.stringify(func.toString())
 
     var hash = 0, i, chr;
@@ -26,7 +26,7 @@ const hashFromFunction = func => {
         hash = ((hash << 5) - hash) + chr;
         hash |= 0; // Convert to 32bit integer
     }
-    return (hash + Math.random() + Date.now()).toString();
+    return hash.toString() + name;
 };
 
 export default function ColorProvider({
@@ -38,8 +38,8 @@ export default function ColorProvider({
 
     const [active, setActive] = useState(false);
 
-    const registerCallback = useCallback(callback => {
-        const hash = hashFromFunction(callback);
+    const registerCallback = useCallback((callback, name='') => {
+        const hash = hashFromFunction(callback, name);
 
         dispatch({
             callback,
@@ -53,7 +53,7 @@ export default function ColorProvider({
         dispatch({
             callback: null,
             hash
-        })
+        });
 
         return hash
     }, []);

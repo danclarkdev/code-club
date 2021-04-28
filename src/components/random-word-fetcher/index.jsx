@@ -22,6 +22,6 @@ export default function RandomWordFetcher() {
                 }
             </p>
         </HeroBody>
-        <SubscriptionButton callback={getWord} />
+        <SubscriptionButton name={RandomWordFetcher.name} callback={getWord} />
     </Tile>;
 }

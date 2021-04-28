@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { useColor } from '../../providers/color-provider';
 
 export default function SubscriptionButton({
-    callback
+    callback,
+    name = ''
 }) {
     const { registerCallback, unregisterCallback } = useColor();
 
@@ -13,7 +14,7 @@ export default function SubscriptionButton({
 
     useEffect(() => {
         setCallbackHash(
-            registerCallback(callback)
+            registerCallback(callback, name)
         );
     }, []);
 
@@ -22,7 +23,7 @@ export default function SubscriptionButton({
             unregisterCallback(callbackHash);
             setActive(false);
         } else {
-            registerCallback(callback);
+            registerCallback(callback, name);
             setActive(true);
         }
     }
