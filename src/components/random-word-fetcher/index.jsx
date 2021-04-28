@@ -20,7 +20,7 @@ export default function RandomWordFetcher() {
         registerCallback(getWord);
     }, []);
 
-    return <Tile level="child" className="hero has-background-primary">
+    return <Tile level="child" className="hero has-background-black">
         <HeroBody>
             <p className="title has-text-light is-size-3 has-text-centered ">
                 {

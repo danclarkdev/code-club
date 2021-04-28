@@ -54,7 +54,7 @@ export default function ColorAnalyzer() {
         registerCallback(color => setColor(color));
     }, []);
 
-    return <Tile level="child" className="hero has-background-grey-light">
+    return <Tile level="child" className="hero has-background-danger">
         <HeroBody>
             <p className="title has-text-light is-size-3 has-text-centered ">
                 {
