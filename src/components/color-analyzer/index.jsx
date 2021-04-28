@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { useColor } from '../../providers/color-provider';
 import HeroBody from '../hero/hero-body';
+import SubscriptionButton from '../subscription-button';
 import Tile from '../tile';
 
 /**
@@ -46,13 +47,9 @@ const pad = (n, width, z) => {
 
 export default function ColorAnalyzer() {
 
-    const { registerCallback, color: init } = useColor();
+    const { color: init } = useColor();
 
     const [color, setColor] = useState(init)
-
-    useEffect(() => {
-        registerCallback(color => setColor(color));
-    }, []);
 
     return <Tile level="child" className="hero has-background-danger">
         <HeroBody>
@@ -62,5 +59,6 @@ export default function ColorAnalyzer() {
                 }
             </p>
         </HeroBody>
+        <SubscriptionButton callback={color => setColor(color)} />
     </Tile>;
 }
