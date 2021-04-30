@@ -18,7 +18,7 @@ export default function Publisher({
             setValue(generated);
 
             eventBus.dispatch(event(generated))
-        }, 1000);
+        }, publishable.interval);
 
         return () => clearInterval(interval);
     }, []);
