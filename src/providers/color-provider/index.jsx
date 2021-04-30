@@ -1,6 +1,6 @@
 import React, { useCallback, useContext, useEffect, useReducer, useState } from 'react';
 
-import { ColorMaker } from '../../ColorMaker';
+import { ColorMaker } from '../../models/color-maker';
 import Section from '../../components/section';
 
 const ColorContext = React.createContext('color');
