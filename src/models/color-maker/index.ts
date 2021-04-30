@@ -11,4 +11,8 @@ export class ColorMaker {
     private static componentToHex(c: Number) {
         const hex = c.toString(16); return hex.length === 1 ? "0" + hex : hex;
     }
+
+    private static generate(): string {
+        return ColorMaker.makeRandomHexColour();
+    }
 }
